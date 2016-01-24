@@ -1,4 +1,4 @@
-﻿#描述：  
+#描述：  
 
 这是一个很简单很简单的HTTP请求转发服务器，代码只有40行，可以很简单的部署到任何支持WSGI的
 云端服务器，然后使用其中转KindleEar的个别HTTP请求，以便绕过墙或绕过部分网站对GAE的IP的封锁。
@@ -13,4 +13,4 @@
 例子参照KindleEar项目的books/ZhihuDaily.py (知乎日报)
 
 #部署到Heroku步骤：
-参见[DeployToHeroku.md](https://github.com/cdhigh/forwarder/blob/master/readme_EN.md)
+参见 [DeployToHeroku.md](https://github.com/cdhigh/forwarder/blob/master/DeployToHeroku.md)
