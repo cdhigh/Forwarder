@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-""" python网络请求转发器，可以将其部署到任何一个支持WSGI的托管空间。
+""" python网络请求转发器，可以轻易将其部署到任何一个支持WSGI的托管空间。
 用法：
   http://hostedurl?k=AUTHKEY&t=timeout&u=url
   解析：
@@ -10,11 +10,11 @@
   timeout: [可选]超时时间，默认为30s
  """
 
-__Version__ = "1.1"
+__Version__ = "1.2"
 __Author__ = "Arroz <https://github.com/cdhigh>"
 
 from wsgiref.util import is_hop_by_hop
-import urllib, urllib2, socket, bottle
+import os, urllib, urllib2, socket, bottle
 
 ALLOW_KEYS = ('xzSlE','ILbou')
 
