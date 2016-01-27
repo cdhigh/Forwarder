@@ -1,1 +1,1 @@
-web: python wsgi.py 5000
+web: python ./wsgi.py $PORT

@@ -10,13 +10,13 @@
   timeout: [可选]超时时间，默认为30s
  """
 
-__Version__ = "1.2"
-__Author__ = "Arroz <https://github.com/cdhigh>"
+__Version__ = "1.2.1"
+__Author__ = "cdhigh <https://github.com/cdhigh>"
 
 from wsgiref.util import is_hop_by_hop
 import os, urllib, urllib2, socket, bottle
 
-ALLOW_KEYS = ('xzSlE','ILbou')
+ALLOW_KEYS = 'xzSlE'
 
 application = app = bottle.Bottle()
 
@@ -25,7 +25,7 @@ def Home():
     resp = bottle.response
     qry = bottle.request.query
     url, k, timeout = qry.u, qry.k, int(qry.get('t', '30'))
-    if k and k not in ALLOW_KEYS:
+    if k and k != ALLOW_KEYS:
         return 'Auth Key is invalid!'
     
     if url and k:

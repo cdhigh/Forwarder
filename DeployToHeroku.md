@@ -34,10 +34,10 @@
 或  
 `git remote add heroku git@heroku.com:kforwarder.git`
 
-10. 上传代码  
+10. 上传代码(这里面的heroku就是上一步查询出来的git库名字)  
 `git push heroku master`
 
-11. 如果需要，修改应用到进程数  
+11. 如果需要，修改应用的进程数  
 `heroku scale web=1`
 
 12. 其他几个有用到命令  
