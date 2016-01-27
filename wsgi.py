@@ -20,7 +20,7 @@ ALLOW_KEYS = 'xzSlE'
 
 application = app = bottle.Bottle()
 
-@app.route(r'/')
+@bottle.route(r'/')
 def Home():
     resp = bottle.response
     qry = bottle.request.query
