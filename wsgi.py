@@ -10,7 +10,7 @@
   timeout: [可选]超时时间，默认为30s
  """
 
-__Version__ = "1.2.2"
+__Version__ = "1.2.3"
 __Author__ = "cdhigh <https://github.com/cdhigh>"
 
 from wsgiref.util import is_hop_by_hop
@@ -29,7 +29,7 @@ def Home():
         return 'Auth Key is invalid!'
     
     if url and k:
-        url = urllib.unquote(url)
+        url = urllib.unquote(url.encode('utf-8'))
         try:
             req = urllib2.Request(url)
             req.add_header('User-Agent', "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)")
@@ -55,5 +55,5 @@ def Home():
         return "<html><head><title>Forwarder Url</title></head><body>Forwarder(%s) : thisurl?k=AUTHKEY&t=timeout&u=url</body></html>" % __Version__
 
 if __name__ == '__main__':
-    #bottle.run(app, reloader=True) #for debug in computer
+    #bottle.run(reloader=True) #for debug in computer
     bottle.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000))) #for Heroku
