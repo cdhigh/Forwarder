@@ -10,7 +10,7 @@
   timeout: [可选]超时时间，默认为30s
  """
 
-__Version__ = "1.2.3"
+__Version__ = "1.2.4"
 __Author__ = "cdhigh <https://github.com/cdhigh>"
 
 from wsgiref.util import is_hop_by_hop
@@ -29,7 +29,7 @@ def Home():
         return 'Auth Key is invalid!'
     
     if url and k:
-        url = urllib.unquote(url.encode('utf-8'))
+        url = urllib.unquote(url.encode('utf-8')).replace(' ', r'%20')
         try:
             req = urllib2.Request(url)
             req.add_header('User-Agent', "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)")
