@@ -29,9 +29,10 @@ import os, socket, bottle
 
 ALLOW_KEY = os.environ.get('ALLOW_KEY') or 'xzSlE'
 
-application = app = bottle.Bottle()
+app = bottle.Bottle()
+application = app
 
-@bottle.route(r'/')
+@app.route(r'/')
 def Home():
     resp = bottle.response
     qry = bottle.request.query
